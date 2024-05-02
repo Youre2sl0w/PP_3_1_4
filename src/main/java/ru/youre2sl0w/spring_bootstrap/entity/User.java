@@ -1,4 +1,4 @@
-package ru.youre2sl0w.spring.boot_security.entity;
+package ru.youre2sl0w.spring_bootstrap.entity;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +13,6 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.util.Collection;
 
 @Entity
@@ -29,11 +28,11 @@ public class User implements UserDetails {
     private Long id;
 
     @Column(name = "name")
-    @Pattern(regexp = "^[A-ZА-Я][a-zA-Zа-яА-Я]*((-)[a-zA-Zа-яА-Я])*$", message = "Некорректный формат имени: проверьте введённые данные")
+    @NotNull(message = "Некорректный формат имени: проверьте введенные данные")
     private String name;
 
     @Column(name = "lastName")
-    @Pattern(regexp = "^[A-ZА-Я][a-zA-Zа-яА-Я]*((-)[a-zA-Zа-яА-Я])*$", message = "Некорректный формат фамилии: проверьте введённые данные")
+    @NotNull(message = "Некорректный формат фамилии: проверьте введенные данные")
     private String lastName;
 
     @Column(name = "age")

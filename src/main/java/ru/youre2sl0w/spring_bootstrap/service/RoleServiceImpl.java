@@ -1,9 +1,9 @@
-package ru.youre2sl0w.spring.boot_security.service;
+package ru.youre2sl0w.spring_bootstrap.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.youre2sl0w.spring.boot_security.entity.Role;
-import ru.youre2sl0w.spring.boot_security.repository.RoleRepository;
+import ru.youre2sl0w.spring_bootstrap.entity.Role;
+import ru.youre2sl0w.spring_bootstrap.repository.RoleRepository;
 
 import java.util.List;
 

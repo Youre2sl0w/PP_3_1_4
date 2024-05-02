@@ -1,8 +1,8 @@
-package ru.youre2sl0w.spring.boot_security.repository;
+package ru.youre2sl0w.spring_bootstrap.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.youre2sl0w.spring.boot_security.entity.Role;
+import ru.youre2sl0w.spring_bootstrap.entity.Role;
 
 import java.util.Optional;
 

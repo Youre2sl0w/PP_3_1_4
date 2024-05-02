@@ -1,4 +1,4 @@
-package ru.youre2sl0w.spring.boot_security.configs;
+package ru.youre2sl0w.spring_bootstrap.configs;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -10,8 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import ru.youre2sl0w.spring.boot_security.service.UserService;
-
+import ru.youre2sl0w.spring_bootstrap.service.UserService;
 
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -28,11 +27,13 @@ public class WebSecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/css/style.css").permitAll()
+                .antMatchers("https://cdn.jsdelivr.net/**").permitAll()
                 .antMatchers("/user/**").hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
                 .antMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().successHandler(successUserHandler)
+                .formLogin().loginPage("/login").successHandler(successUserHandler)
+                .permitAll()
                 .and()
                 .logout().logoutSuccessUrl("/");
         return http.build();

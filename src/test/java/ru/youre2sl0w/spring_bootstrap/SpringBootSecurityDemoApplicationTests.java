@@ -1,4 +1,4 @@
-package ru.youre2sl0w.spring.boot_security;
+package ru.youre2sl0w.spring_bootstrap;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

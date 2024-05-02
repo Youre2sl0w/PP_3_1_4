@@ -1,4 +1,4 @@
-package ru.youre2sl0w.spring.boot_security.configs;
+package ru.youre2sl0w.spring_bootstrap.configs;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;

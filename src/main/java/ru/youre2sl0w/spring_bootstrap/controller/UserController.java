@@ -1,4 +1,4 @@
-package ru.youre2sl0w.spring.boot_security.controller;
+package ru.youre2sl0w.spring_bootstrap.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -6,28 +6,25 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import ru.youre2sl0w.spring.boot_security.service.UserService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import ru.youre2sl0w.spring_bootstrap.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/")
-    public String startPage() {
-        return "startPage";
-    }
-
-    @GetMapping("/user")
+    @GetMapping()
     public String printUser(Model model, Principal principal) {
-        model.addAttribute("user", userService.findByUsername(principal.getName()));
+        model.addAttribute("currentUser", userService.findByUsername(principal.getName()));
         return "userPage";
     }
 
-    @GetMapping("/user/logout")
+    @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null) {

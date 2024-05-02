@@ -1,13 +1,12 @@
-package ru.youre2sl0w.spring.boot_security.init;
+package ru.youre2sl0w.spring_bootstrap.init;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import ru.youre2sl0w.spring.boot_security.entity.Role;
-import ru.youre2sl0w.spring.boot_security.entity.User;
-import ru.youre2sl0w.spring.boot_security.repository.UserRepository;
-import ru.youre2sl0w.spring.boot_security.repository.RoleRepository;
+import ru.youre2sl0w.spring_bootstrap.entity.Role;
+import ru.youre2sl0w.spring_bootstrap.entity.User;
+import ru.youre2sl0w.spring_bootstrap.repository.UserRepository;
+import ru.youre2sl0w.spring_bootstrap.repository.RoleRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.Set;

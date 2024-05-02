@@ -1,7 +1,7 @@
-package ru.youre2sl0w.spring.boot_security.service;
+package ru.youre2sl0w.spring_bootstrap.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
-import ru.youre2sl0w.spring.boot_security.entity.User;
+import ru.youre2sl0w.spring_bootstrap.entity.User;
 
 import java.util.List;
 

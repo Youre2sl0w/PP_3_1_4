@@ -1,4 +1,4 @@
-package ru.youre2sl0w.spring.boot_security.entity;
+package ru.youre2sl0w.spring_bootstrap.entity;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
